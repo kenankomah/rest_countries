@@ -1,12 +1,12 @@
 import { createContext, useEffect, useState } from "react";
-
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import CountryList from "./components/country_list/country_list";
 import CountryDetails from "./components/country_details/country_details";
 
-interface Country {
+export interface CountryType {
     name: {
         common: string;
+        nativeName: { [key: string]: { [key: string]: string } };
     };
     population: number;
     region: string;
@@ -15,12 +15,17 @@ interface Country {
         svg: string;
     };
     cca3: string;
+    tld: string;
+    languages: { [key: string]: string };
+    currencies: { [key: string]: { [key: string]: string } };
+    subregion: string;
+    borders: string[];
 }
 
-export const CountriesData = createContext([] as Country[]);
+export const CountriesData = createContext([] as CountryType[]);
 
 function App() {
-    const [countries, setCountries] = useState<Country[]>([]);
+    const [countries, setCountries] = useState<CountryType[]>([]);
 
     useEffect(() => {
         async function fetchData() {
