@@ -1,7 +1,9 @@
 import { useState } from "react";
 
 function Nav() {
-    const [darkTheme, setDarkTheme] = useState(false);
+    const isDarkTheme = document.body.classList.contains("dark-theme");
+
+    const [darkTheme, setDarkTheme] = useState(isDarkTheme);
 
     function themeToggle() {
         document.body.classList.toggle("dark-theme");
