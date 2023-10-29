@@ -40,7 +40,9 @@ function CountryDetails() {
     return (
         <div>
             <Nav />
-            <Link to="/">Back</Link>
+            <button className="back-button">
+                <Link to="/">Back</Link>
+            </button>
             <img src={flags.svg} alt={name.common} />
             <h1>{name.common}</h1>
             <p>Population: {population}</p>
@@ -55,11 +57,10 @@ function CountryDetails() {
             <div>
                 <h2>Border Countries:</h2>
                 {borderCountries?.map((neighbour) => {
+                    const { cca3, name } = neighbour as CountryType;
                     return (
-                        <p key={neighbour?.cca3}>
-                            <Link to={`/${neighbour?.cca3}`}>
-                                {neighbour?.name.common}{" "}
-                            </Link>
+                        <p key={cca3}>
+                            <Link to={`/${cca3}`}>{name.common} </Link>
                         </p>
                     );
                 })}

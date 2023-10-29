@@ -39,10 +39,12 @@ function App() {
     return (
         <Router>
             <CountriesData.Provider value={countries}>
-                <Routes>
-                    <Route path="/" element={<CountryList />} />
-                    <Route path="/:country" element={<CountryDetails />} />
-                </Routes>
+                <div className="app_container">
+                    <Routes>
+                        <Route path="/" element={<CountryList />} />
+                        <Route path="/:country" element={<CountryDetails />} />
+                    </Routes>
+                </div>
             </CountriesData.Provider>
         </Router>
     );
