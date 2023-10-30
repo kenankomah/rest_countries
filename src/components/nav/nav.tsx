@@ -6,6 +6,7 @@ function Nav() {
     const [darkTheme, setDarkTheme] = useState(isDarkTheme);
 
     function themeToggle() {
+        //consider using useRef to get the body element
         document.body.classList.toggle("dark-theme");
         setDarkTheme(!darkTheme);
     }

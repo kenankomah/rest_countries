@@ -1,4 +1,10 @@
-import React, { useState, useEffect, useContext, ChangeEvent } from "react";
+import React, {
+    useState,
+    useEffect,
+    useContext,
+    ChangeEvent,
+    useRef,
+} from "react";
 import { Link } from "react-router-dom";
 import Nav from "../nav/nav";
 import "./country_list.scss";
@@ -9,7 +15,7 @@ function CountryList() {
     const [countryList, setCountrList] = useState(countries);
     const [regionList, setRegionList] = useState(countries);
 
-    //filters need to work together
+    const inputRef = useRef<HTMLInputElement>(null);
 
     function filterByRegion(region: string) {
         if (region === "Filter by Region") {
@@ -26,12 +32,17 @@ function CountryList() {
         );
     }
 
-    console.log("regionList", regionList);
-
     useEffect(() => {
         setCountrList(countries);
         setRegionList(countries);
     }, [countries]);
+
+    useEffect(() => {
+        const value = inputRef.current?.value;
+        if (value) {
+            setCountrList(searchByCountryName(value));
+        }
+    }, [regionList]);
 
     return (
         <div className="App ">
@@ -42,6 +53,7 @@ function CountryList() {
                     <input
                         type="text"
                         placeholder="Search for a country..."
+                        ref={inputRef}
                         onChange={(e: ChangeEvent<HTMLInputElement>) => {
                             const target = e.target as HTMLInputElement;
                             setCountrList(searchByCountryName(target.value));
