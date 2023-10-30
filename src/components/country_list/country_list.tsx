@@ -7,20 +7,30 @@ import { CountriesData } from "../../App";
 function CountryList() {
     const countries = useContext(CountriesData);
     const [countryList, setCountrList] = useState(countries);
+    const [regionList, setRegionList] = useState(countries);
+
+    //filters need to work together
 
     function filterByRegion(region: string) {
-        if (region === "Filter by Region") return countries;
+        if (region === "Filter by Region") {
+            setRegionList(countries);
+            return countries;
+        }
+        setRegionList(countries.filter((country) => country.region === region));
         return countries.filter((country) => country.region === region);
     }
 
     function searchByCountryName(name: string) {
-        return countries.filter((country) =>
+        return regionList.filter((country) =>
             country.name.common.toLowerCase().includes(name.toLowerCase())
         );
     }
 
+    console.log("regionList", regionList);
+
     useEffect(() => {
         setCountrList(countries);
+        setRegionList(countries);
     }, [countries]);
 
     return (
@@ -74,6 +84,7 @@ function CountryList() {
                             </div>
                         );
                     })}
+                    {/* if no countries match search then put a display message */}
                 </div>
             </div>
         </div>
