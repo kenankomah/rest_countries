@@ -14,7 +14,7 @@ function Nav() {
         <nav onClick={themeToggle} className="nav-bar">
             Where in the world
             <div className="theme-toggle">
-                <span>{darkTheme ? "Dark Mode" : "light mode"}</span>
+                <span>{darkTheme ? "Light Mode" : "Dark Mode"}</span>
             </div>
         </nav>
     );
