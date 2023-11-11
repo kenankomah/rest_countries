@@ -1,0 +1,27 @@
+.theme_icon_container {
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+// .theme_icon_container:hover {
+//     background-color: rgba(35, 39, 47, 0.1);
+//     background-color: rgba(246, 247, 249, 0.1);
+// }
+
+img {
+    margin: 0 auto;
+    display: block;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.theme_icon_container:hover {
+    background-color: rgba(35, 39, 47, 0.1);
+}
+
+.dark-theme .theme_icon_container:hover {
+    background-color: rgba(246, 247, 249, 0.1);
+}
