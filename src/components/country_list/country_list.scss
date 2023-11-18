@@ -20,20 +20,6 @@
     }
 }
 
-//move to nav-bar.scss
-
-.nav-bar {
-    width: 100%;
-    height: 80px;
-    border: 1px solid #e0e0e0;
-    position: fixed;
-    top: 0;
-}
-.dark .nav-bar {
-    background-color: #2b3945;
-    color: white;
-}
-
 .search_and_filter {
     display: flex;
     justify-content: space-between;

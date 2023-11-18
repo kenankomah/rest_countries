@@ -1,33 +1,41 @@
 import { useState } from "react";
 import "./nav.scss";
 
+type classListActions = "add" | "remove" | "contains" | "toggle";
+
+function themeClassHandler(action: classListActions) {
+    return document.body.classList[action]("dark-theme");
+}
+
 function Nav() {
-    const isDarkTheme = document.body.classList.contains("dark-theme");
-    const [darkTheme, setDarkTheme] = useState(isDarkTheme);
+    localStorage.getItem("darkMode") === "true"
+        ? themeClassHandler("add")
+        : themeClassHandler("remove");
+
+    const isDarkMode = themeClassHandler("contains");
+    const [darkMode, setDarkMode] = useState(isDarkMode);
 
     function themeToggle() {
-        //consider using useRef to get the body element
-        document.body.classList.toggle("dark-theme");
-        setDarkTheme(!darkTheme);
+        themeClassHandler("toggle");
+        setDarkMode(!darkMode);
+        localStorage.setItem("darkMode", (!darkMode).toString());
     }
 
-    const themeText = darkTheme ? "Light Mode" : "Dark Mode";
-    const themeIcon = darkTheme
-        ? "/light_mode_icon.svg"
-        : "/dark_mode_icon.svg";
+    const themeText = darkMode ? "Light Mode" : "Dark Mode";
+    const themeIcon = darkMode ? "/light_mode_icon.svg" : "/dark_mode_icon.svg";
 
     return (
-        <nav onClick={themeToggle} className="nav-bar">
-            Where in the world
+        <nav className="nav-bar">
+            <p className="nav_text"> Where in the world?</p>
             <div className="theme-toggle">
-                <span>{themeText}</span>
-                <div className="theme_icon_container">
+                <div onClick={themeToggle} className="theme_icon_container">
                     <img
                         className="theme_icon"
                         src={themeIcon}
                         alt={themeText}
                     />
                 </div>
+                <span className="theme_text">{themeText}</span>
             </div>
         </nav>
     );
