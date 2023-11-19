@@ -22,7 +22,9 @@ function Nav() {
     }
 
     const themeText = darkMode ? "Light Mode" : "Dark Mode";
-    const themeIcon = darkMode ? "/light_mode_icon.svg" : "/dark_mode_icon.svg";
+    const themeIcon = darkMode
+        ? "/assets/light_mode_icon.svg"
+        : "/assets/dark_mode_icon.svg";
 
     return (
         <nav className="nav-bar">

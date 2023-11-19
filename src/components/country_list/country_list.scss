@@ -13,10 +13,6 @@
         }
 
         margin-top: 100px;
-
-        // @media screen and (max-width: 1024px) {
-        //     grid-template-columns: 1fr 1fr 1fr;
-        // }
     }
 }
 
@@ -44,7 +40,7 @@ input[type="text"] {
     border-radius: 4px;
     font-size: 16px;
     background-color: white;
-    background-image: url("../../../public/search_icon.svg");
+    background-image: url("../../../public/assets/search_icon.svg");
     background-position: 10px 10px;
     background-repeat: no-repeat;
     padding: 12px 20px 12px 40px;
