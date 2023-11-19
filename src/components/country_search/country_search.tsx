@@ -1,5 +1,38 @@
-import React from "react";
+import { ChangeEvent, useEffect, useRef } from "react";
+import { CountryType } from "../../App";
 
-export default function country_search() {
-    return <div>country_search</div>;
+interface CountrySearchProps {
+    regionList: CountryType[];
+    setCountryList: Function;
+}
+
+export default function CountrySearch({
+    regionList,
+    setCountryList,
+}: CountrySearchProps) {
+    const inputRef = useRef<HTMLInputElement>(null);
+    function searchByCountryName(name: string) {
+        return regionList.filter((country: CountryType) =>
+            country.name.common.toLowerCase().includes(name.toLowerCase())
+        );
+    }
+
+    useEffect(() => {
+        const value = inputRef.current?.value;
+        if (value) {
+            setCountryList(searchByCountryName(value));
+        }
+    }, [regionList]);
+
+    return (
+        <input
+            type="text"
+            placeholder="Search for a country..."
+            ref={inputRef}
+            onChange={(e: ChangeEvent<HTMLInputElement>) => {
+                const target = e.target as HTMLInputElement;
+                setCountryList(searchByCountryName(target.value));
+            }}
+        />
+    );
 }

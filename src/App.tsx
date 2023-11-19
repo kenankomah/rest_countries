@@ -2,6 +2,7 @@ import { createContext, useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import CountryList from "./components/country_list/country_list";
 import CountryDetails from "./components/country_details/country_details";
+import HomePage from "./components/home_page/home_page";
 
 export interface CountryType {
     name: {
@@ -42,7 +43,7 @@ function App() {
             <CountriesData.Provider value={countries}>
                 <div className="app_container">
                     <Routes>
-                        <Route path="/" element={<CountryList />} />
+                        <Route path="/" element={<HomePage />} />
                         <Route path="/:country" element={<CountryDetails />} />
                     </Routes>
                 </div>
