@@ -1,5 +1,6 @@
 import { ChangeEvent, useEffect, useRef } from "react";
 import { CountryType } from "../../App";
+import "./country_search.scss";
 
 interface CountrySearchProps {
     regionList: CountryType[];
@@ -26,6 +27,7 @@ export default function CountrySearch({
 
     return (
         <input
+            className="search_field"
             type="text"
             placeholder="Search for a country..."
             ref={inputRef}

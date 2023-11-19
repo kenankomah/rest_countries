@@ -1,6 +1,6 @@
 import { ChangeEvent, useContext } from "react";
 import { CountriesData } from "../../App";
-
+import "./country_filter.scss";
 interface CountryFilterProps {
     setCountryList: Function;
     setRegionList: Function;

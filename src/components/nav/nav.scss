@@ -1,5 +1,6 @@
 @import "../../css/variables.scss";
 @import "../../css/media_queries.scss";
+@import "../../css/mixins.scss";
 
 .theme_icon_container {
     height: 3rem;
@@ -31,7 +32,7 @@ img.theme_icon {
 
 .dark-theme .nav-bar {
     background-color: $dark-grey;
-    filter: drop-shadow(0 0 7px #282828);
+    filter: drop-shadow(0 0 7px $shadow-dark);
 }
 
 .nav-bar {
@@ -45,7 +46,7 @@ img.theme_icon {
     position: fixed;
     top: 0;
     background-color: #fff;
-    filter: drop-shadow(0 0 7px #d0d0d0);
+    filter: drop-shadow(0 0 7px $shadow-light);
 
     @include mobile {
         padding: 0 27px;

@@ -15,14 +15,11 @@ code {
 }
 
 .dark-theme {
-    background-color: #202c36;
+    background-color: $dark-blue;
     color: white;
 }
 
-a:visited {
-    color: black;
-}
-
 a {
+    color: black;
     text-decoration: none;
 }
