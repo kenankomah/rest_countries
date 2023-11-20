@@ -1,14 +1,4 @@
-//// @ts-nocheck
-
-import {
-    ChangeEvent,
-    MouseEvent,
-    MouseEventHandler,
-    useContext,
-    useState,
-    useEffect,
-    DetailedHTMLProps,
-} from "react";
+import { MouseEvent, useContext, useState } from "react";
 import { CountriesData } from "../../App";
 import "./country_filter.scss";
 interface CountryFilterProps {
@@ -44,10 +34,27 @@ export default function CountryFilter({
     }
 
     const menuClass = isMenuOpen ? "dropdown-content" : "dropdown-content hide";
+    const chevronClass = isMenuOpen
+        ? "chevron_container rotate"
+        : "chevron_container";
+
+    const isDarkTheme = document.body.classList.contains("dark-theme");
+
+    // const chevron = isDarkTheme
+    //     ? "/assets/chevron_down_icon_white.svg"
+    //     : "/assets/chevron_down_icon.svg";
 
     return (
         <div className="dropdown" onClick={menuSate}>
-            <button className="dropbtn">{region}</button>
+            <button className="dropbtn">
+                {region}
+                {/* <img
+                    className={chevronClass}
+                    src={chevron}
+                    alt="down chevron icon"
+                /> */}
+                <div className={chevronClass}></div>
+            </button>
             <div className={menuClass}>
                 <p>Filter by Region</p>
                 <p>Africa</p>

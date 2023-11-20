@@ -1,31 +1,46 @@
 @import "../../css/variables.scss";
 @import "../../css/media_queries.scss";
 
-// #region {
-//     width: 200px;
-//     height: 56px;
-//     padding-left: 20px;
-//     border: none;
-//     &::after {
-//         position: absolute;
-//         content: "";
-//         top: 14px;
-//         right: 10px;
-//         width: 0;
-//         height: 0;
-//         border: 6px solid transparent;
-//         border-color: #fff transparent transparent transparent;
-//     }
-// }
-
 .dropbtn {
-    background-color: #4caf50;
-    color: white;
-    padding: 16px;
+    background-color: #fff;
+    position: relative;
+    padding: 15px 20px;
     font-size: 16px;
     border: none;
     cursor: pointer;
     width: 100%;
+    height: 56px;
+    text-align: left;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    filter: drop-shadow(0 0 7px $shadow-light);
+    .chevron_container {
+        position: relative;
+        top: 1px;
+        width: 12px;
+        height: 10px;
+        background-image: url("../../../public/assets/chevron_down_icon.svg");
+        background-size: 12px;
+        background-repeat: no-repeat;
+        &.rotate {
+            transform: rotate(180deg);
+        }
+        transition: all 0.1s;
+    }
+}
+
+.dark-theme .dropbtn {
+    filter: drop-shadow(0 0 7px $shadow-dark);
+    .chevron_container {
+        background-image: url("../../../public/assets/chevron_down_icon_white.svg");
+    }
+}
+
+.dark-theme .dropbtn {
+    background-color: $dark-grey;
+    color: #fff;
 }
 
 .dropdown {
@@ -37,18 +52,22 @@
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #f9f9f9;
+    background-color: #fff;
     width: 100%;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    filter: drop-shadow(0 0 7px $shadow-light);
     z-index: 1;
-    top: 53px;
+    top: 61px;
+    border-radius: 5px;
+    p {
+        padding: 10px 20px;
+        margin: 0;
+    }
 }
 
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
+.dark-theme .dropdown-content {
+    background-color: $dark-grey;
+    filter: drop-shadow(0 0 7px $shadow-dark);
+    color: #fff;
 }
 
 .dropdown-content p:hover {
@@ -63,6 +82,6 @@
     }
 }
 
-.dropdown:hover .dropbtn {
-    background-color: #3e8e41;
-}
+// .dropdown:hover .dropbtn {
+//     background-color: #3e8e41;
+// }
