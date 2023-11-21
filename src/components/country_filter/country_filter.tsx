@@ -15,7 +15,7 @@ export default function CountryFilter({
     const [region, setRegion] = useState("Filter by Region");
 
     function filterByRegion(region: string) {
-        if (region === "Filter by Region") {
+        if (region === "Filter by Region" || region === "All Regions") {
             setRegionList(countries);
             return countries;
         }
@@ -38,25 +38,15 @@ export default function CountryFilter({
         ? "chevron_container rotate"
         : "chevron_container";
 
-    const isDarkTheme = document.body.classList.contains("dark-theme");
-
-    // const chevron = isDarkTheme
-    //     ? "/assets/chevron_down_icon_white.svg"
-    //     : "/assets/chevron_down_icon.svg";
-
     return (
         <div className="dropdown" onClick={menuSate}>
             <button className="dropbtn">
                 {region}
-                {/* <img
-                    className={chevronClass}
-                    src={chevron}
-                    alt="down chevron icon"
-                /> */}
+
                 <div className={chevronClass}></div>
             </button>
             <div className={menuClass}>
-                <p>Filter by Region</p>
+                <p>All Regions</p>
                 <p>Africa</p>
                 <p>Americas</p>
                 <p>Asia</p>

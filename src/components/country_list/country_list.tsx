@@ -16,12 +16,29 @@ function CountryList({ countryList }: CountryListProps) {
                             <img
                                 src={country.flags.svg}
                                 alt={country.name.common}
-                                width="100"
+                                className="country_flag"
                             />
-                            <h3>{country.name.common}</h3>
-                            <p>Population: {country.population}</p>
-                            <p>Region: {country.region}</p>
-                            <p>Capital: {country.capital}</p>
+                            <div className="country_info">
+                                <h3>{country.name.common}</h3>
+                                <p>
+                                    <span className="country_info_label">
+                                        Population:
+                                    </span>
+                                    {country.population}
+                                </p>
+                                <p>
+                                    <span className="country_info_label">
+                                        Region:
+                                    </span>
+                                    {country.region}
+                                </p>
+                                <p>
+                                    <span className="country_info_label">
+                                        Capital:
+                                    </span>
+                                    {country.capital}
+                                </p>
+                            </div>
                         </Link>
                     </div>
                 );

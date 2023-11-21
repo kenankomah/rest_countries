@@ -21,6 +21,7 @@ input[type="text"].search_field {
     @include mobile {
         width: 100%;
         font-size: 12px;
+        height: 48px;
     }
 }
 

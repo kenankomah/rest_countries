@@ -5,7 +5,7 @@
     background-color: #fff;
     position: relative;
     padding: 15px 20px;
-    font-size: 16px;
+    font-size: inherit;
     border: none;
     cursor: pointer;
     width: 100%;
@@ -29,12 +29,24 @@
         }
         transition: all 0.1s;
     }
+
+    &:hover {
+        background-color: darken(#fff, 3%);
+    }
+
+    @include mobile {
+        height: 48px;
+    }
 }
 
 .dark-theme .dropbtn {
     filter: drop-shadow(0 0 7px $shadow-dark);
     .chevron_container {
         background-image: url("../../../public/assets/chevron_down_icon_white.svg");
+    }
+
+    &:hover {
+        background-color: lighten($dark-grey, 5%);
     }
 }
 
@@ -47,6 +59,11 @@
     position: relative;
     display: inline-block;
     width: 200px;
+    font-size: 14px;
+
+    @include mobile {
+        font-size: 12px;
+    }
 }
 
 .dropdown-content {
@@ -59,8 +76,14 @@
     top: 61px;
     border-radius: 5px;
     p {
-        padding: 10px 20px;
+        padding: 5px 20px;
         margin: 0;
+        &:first-child {
+            margin-top: 10px;
+        }
+        &:last-child {
+            margin-bottom: 10px;
+        }
     }
 }
 
@@ -71,7 +94,11 @@
 }
 
 .dropdown-content p:hover {
-    background-color: #f1f1f1;
+    background-color: darken(#fff, 6%);
+}
+
+.dark-theme .dropdown-content p:hover {
+    background-color: lighten($dark-grey, 6%);
 }
 
 .dropdown .dropdown-content {
@@ -81,7 +108,3 @@
         display: none;
     }
 }
-
-// .dropdown:hover .dropbtn {
-//     background-color: #3e8e41;
-// }
