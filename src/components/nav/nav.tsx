@@ -28,16 +28,18 @@ function Nav() {
 
     return (
         <nav className="nav-bar">
-            <p className="nav_text"> Where in the world?</p>
-            <div className="theme-toggle">
-                <div onClick={themeToggle} className="theme_icon_container">
-                    <img
-                        className="theme_icon"
-                        src={themeIcon}
-                        alt={themeText}
-                    />
+            <div className="content_container">
+                <p className="nav_text"> Where in the world?</p>
+                <div className="theme-toggle">
+                    <div onClick={themeToggle} className="theme_icon_container">
+                        <img
+                            className="theme_icon"
+                            src={themeIcon}
+                            alt={themeText}
+                        />
+                    </div>
+                    <span className="theme_text">{themeText}</span>
                 </div>
-                <span className="theme_text">{themeText}</span>
             </div>
         </nav>
     );

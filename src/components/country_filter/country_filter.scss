@@ -63,6 +63,7 @@
 
     @include mobile {
         font-size: 12px;
+        top: 40px;
     }
 }
 
@@ -84,6 +85,10 @@
         &:last-child {
             margin-bottom: 10px;
         }
+    }
+
+    @include mobile {
+        top: 53px;
     }
 }
 

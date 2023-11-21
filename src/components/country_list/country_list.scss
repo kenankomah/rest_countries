@@ -4,16 +4,27 @@
 .container {
     max-width: 1280px;
     margin: 0 auto;
+    padding: 0 55px;
+
+    @include mobile {
+        padding: 0 16px;
+    }
 
     .country_list_container {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         grid-gap: 75px;
         width: 100%;
         margin: 0 auto;
 
+        @include mobile {
+            max-width: 265px;
+        }
+
         .country_card {
             background-color: #fff;
+            border-radius: 5px;
+            filter: drop-shadow(0 0 4px $shadow-light);
         }
 
         margin-top: 100px;
@@ -44,9 +55,12 @@
     }
 }
 
-.dark-theme .country_card {
+.dark-theme .country_list_container .country_card {
     h3,
     p {
         color: #fff;
     }
+
+    background-color: $dark-grey;
+    filter: drop-shadow(0 0 7px $shadow-dark);
 }

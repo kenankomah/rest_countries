@@ -18,6 +18,10 @@ input[type="text"].search_field {
         outline: none;
     }
 
+    @include nondesktop {
+        width: 400px;
+    }
+
     @include mobile {
         width: 100%;
         font-size: 12px;
