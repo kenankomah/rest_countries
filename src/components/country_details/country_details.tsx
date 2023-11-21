@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import { CountriesData } from "../../App";
 import { CountryType } from "../../App";
 import Nav from "../nav/nav";
+import "./country_details.scss";
 
 function CountryDetails() {
     const countries = useContext(CountriesData);
@@ -38,7 +39,7 @@ function CountryDetails() {
     });
 
     return (
-        <div>
+        <div className="country_details">
             <Nav />
             <button className="back-button">
                 <Link to="/">Back</Link>

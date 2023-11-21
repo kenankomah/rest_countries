@@ -42,9 +42,11 @@ img.theme_icon {
 .dark-theme .nav-bar {
     background-color: $dark-grey;
     filter: drop-shadow(0 0 7px $shadow-dark);
+    color: #fff;
 }
 
 .nav-bar {
+    color: $dark-text;
     .content_container {
         display: flex;
         justify-content: space-between;
