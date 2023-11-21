@@ -43,6 +43,7 @@ $breakpoint-portrait: 480px !default;
 $breakpoint-tablet: 768px !default;
 $breakpoint-laptop: 992px !default;
 $breakpoint-desktop: 1200px !default;
+$breakpoint-desktop-large: 1355px !default;
 $breakpoint-landscape: 600px;
 $breakpoint-tablet-landscape: 1024px;
 
@@ -96,6 +97,12 @@ $breakpoint-tablet-landscape: 1024px;
 
 @mixin desktop() {
     @include from($breakpoint-desktop) {
+        @content;
+    }
+}
+
+@mixin desktop-large() {
+    @include from($breakpoint-desktop-large) {
         @content;
     }
 }
