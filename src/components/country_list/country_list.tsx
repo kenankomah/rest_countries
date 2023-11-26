@@ -24,7 +24,7 @@ function CountryList({ countryList }: CountryListProps) {
                                     <span className="country_info_label">
                                         Population:
                                     </span>
-                                    {country.population}
+                                    {country.population.toLocaleString()}
                                 </p>
                                 <p>
                                     <span className="country_info_label">
@@ -44,6 +44,13 @@ function CountryList({ countryList }: CountryListProps) {
                 );
             })}
             {/* if no countries match search then put a display message */}
+            {/* color of input text in dark mode needs to be fixed  */}
+            {/* flags too stretched on tablets */}
+            {!countryList.length && (
+                <div className="empty_list">
+                    <h3>No countries found</h3>
+                </div>
+            )}
         </div>
     );
 }

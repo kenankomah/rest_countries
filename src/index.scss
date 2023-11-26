@@ -17,6 +17,12 @@ code {
 .dark-theme {
     background-color: $dark-blue;
     color: white;
+
+    /* Handle */
+    // ::-webkit-scrollbar-thumb {
+    //     background: red;
+    //     border-radius: 10px;
+    // }
 }
 
 a {

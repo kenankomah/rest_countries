@@ -71,3 +71,8 @@
     background-color: $dark-grey;
     filter: drop-shadow(0 0 7px $shadow-dark);
 }
+
+html::-webkit-scrollbar-thumb {
+    background: red;
+    border-radius: 10px;
+}
