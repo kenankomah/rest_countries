@@ -6,14 +6,23 @@ interface CountryListProps {
     countryList: CountryType[];
 }
 
+const oneCountryInList = (countryList: CountryType[]) => {
+    return countryList.length === 1;
+};
+
 function CountryList({ countryList }: CountryListProps) {
+    const ListContainerClass =
+        countryList.length === 1
+            ? "country_list_container single_country"
+            : "country_list_container";
     return (
-        <div className="country_list_container">
+        <div className={ListContainerClass}>
             {countryList.map((country: any) => {
                 return (
                     <div className="country_card" key={country.cca2}>
                         <Link to={`/${country.cca3}`}>
                             <img
+                                loading="lazy"
                                 src={country.flags.svg}
                                 alt={country.name.common}
                                 className="country_flag"
@@ -43,9 +52,9 @@ function CountryList({ countryList }: CountryListProps) {
                     </div>
                 );
             })}
-            {/* if no countries match search then put a display message */}
-            {/* color of input text in dark mode needs to be fixed  */}
+
             {/* flags too stretched on tablets */}
+
             {!countryList.length && (
                 <div className="empty_list">
                     <h3>No countries found</h3>

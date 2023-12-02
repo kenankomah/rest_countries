@@ -18,11 +18,14 @@ code {
     background-color: $dark-blue;
     color: white;
 
-    /* Handle */
-    // ::-webkit-scrollbar-thumb {
-    //     background: red;
-    //     border-radius: 10px;
-    // }
+    body {
+        background-color: $dark-blue;
+        color: white;
+    }
+}
+
+html.dark-theme {
+    color-scheme: dark;
 }
 
 a {

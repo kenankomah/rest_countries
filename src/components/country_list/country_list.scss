@@ -17,6 +17,15 @@
         width: 100%;
         margin: 0 auto;
 
+        &.single_country {
+            @include tablet {
+                max-width: 300px;
+                margin-left: 0;
+                margin-right: 0;
+                display: block;
+            }
+        }
+
         @include desktop-large {
             grid-template-columns: repeat(4, 1fr);
         }
@@ -72,7 +81,7 @@
     filter: drop-shadow(0 0 7px $shadow-dark);
 }
 
-html::-webkit-scrollbar-thumb {
-    background: red;
-    border-radius: 10px;
-}
+// html::-webkit-scrollbar-thumb {
+//     background: red;
+//     border-radius: 10px;
+// }

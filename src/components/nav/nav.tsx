@@ -3,8 +3,10 @@ import "./nav.scss";
 
 type classListActions = "add" | "remove" | "contains" | "toggle";
 
+const html = document.querySelector("html");
+
 function themeClassHandler(action: classListActions) {
-    return document.body.classList[action]("dark-theme");
+    return html?.classList[action]("dark-theme");
 }
 
 function Nav() {

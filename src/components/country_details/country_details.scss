@@ -3,4 +3,49 @@
 
 .country_details {
     color: $dark-text;
+
+    .country_details_info {
+        border: 1px solid grey;
+    }
+
+    .back_button {
+        margin-top: 200px;
+        width: 100px;
+        height: 40px;
+        border-radius: 5px;
+        border: none;
+        border: 1px solid grey;
+        color: $dark-text;
+        font-weight: 600;
+        font-size: 14px;
+        cursor: pointer;
+    }
+
+    .country_details_container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 100px;
+        margin-top: 200px;
+
+        .country_flag {
+            width: 100%;
+        }
+
+        .info_list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .border_countries {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+
+        @include mobile {
+            grid-template-columns: 1fr;
+        }
+    }
 }
