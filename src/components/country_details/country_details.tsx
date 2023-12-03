@@ -12,7 +12,15 @@ function CountryDetails() {
 
     const selectedCountry = countries.find((nation) => nation.cca3 === country);
 
-    if (!selectedCountry) return <div>Country not found</div>; // replace with a 404 page
+    if (!selectedCountry)
+        return (
+            <div className="country_not_found">
+                <p>
+                    Country not found! <br />
+                    <Link to={"/"}>Back to homepage</Link>
+                </p>
+            </div>
+        );
 
     const {
         name,
@@ -38,56 +46,104 @@ function CountryDetails() {
     });
 
     return (
-        <div className="country_details">
+        <>
             <Nav />
-            <button className="back_button">
-                <Link to="/">Back</Link>
-            </button>
+            <div className="country_details">
+                <Link to="/">
+                    <button className="back_button">
+                        <span className="button_text">Back </span>
+                    </button>
+                </Link>
 
-            <div className="country_details_container">
-                <img
-                    className="country_flag"
-                    src={flags.svg}
-                    alt={name.common}
-                />
-                <div className="country_details_info">
-                    <div className="info_container">
-                        <h1>{name.common}</h1>
+                <div className="country_details_container">
+                    <img
+                        className="country_flag"
+                        src={flags.svg}
+                        alt={name.common}
+                    />
+                    <div className="country_details_info">
+                        <div className="info_container">
+                            <h1 className="country_name">{name.common}</h1>
 
-                        <div className="info_list">
-                            <div className="first_info_column">
-                                <p>Native Name: {nativeName} </p>
-                                <p>Population: {population.toLocaleString()}</p>
-                                <p>Region: {region}</p>
-                                <p>Subregion: {subregion}</p>
-                                <p>Capital: {capital}</p>
-                            </div>
+                            <div className="info_list">
+                                <div className="first_info_column">
+                                    <p className="info_text">
+                                        <span className="info_label">
+                                            Native Name:
+                                        </span>
+                                        {nativeName}
+                                    </p>
+                                    <p className="info_text">
+                                        <span className="info_label">
+                                            Population:
+                                        </span>
+                                        {population.toLocaleString()}
+                                    </p>
+                                    <p className="info_text">
+                                        <span className="info_label">
+                                            Region:
+                                        </span>
+                                        {region}
+                                    </p>
+                                    <p className="info_text">
+                                        <span className="info_label">
+                                            Subregion:
+                                        </span>
+                                        {subregion}
+                                    </p>
+                                    <p className="info_text">
+                                        <span className="info_label">
+                                            Capital:
+                                        </span>
+                                        {capital}
+                                    </p>
+                                </div>
 
-                            <div className="second_info_column">
-                                <p>Top Level Domain: {tld}</p>
-                                <p>Currencies: {currencyNameList.join(", ")}</p>
+                                <div className="second_info_column">
+                                    <p className="info_text">
+                                        <span className="info_label">
+                                            Top Level Domain:
+                                        </span>
+                                        {tld}
+                                    </p>
+                                    <p className="info_text">
+                                        <span className="info_label">
+                                            Currencies:
+                                        </span>
+                                        {currencyNameList.join(", ")}
+                                    </p>
 
-                                <p>
-                                    Languages:{" "}
-                                    {Object.values(languages).join(", ")}
-                                </p>
+                                    <p className="info_text">
+                                        <span className="info_label">
+                                            Languages:
+                                        </span>
+                                        {Object.values(languages).join(", ")}
+                                    </p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div className="border_countries">
-                        <h2>Border Countries:</h2>
-                        {borderCountries?.map((neighbour) => {
-                            const { cca3, name } = neighbour as CountryType;
-                            return (
-                                <p key={cca3}>
-                                    <Link to={`/${cca3}`}>{name.common} </Link>
-                                </p>
-                            );
-                        })}
+                        {borderCountries?.length && (
+                            <div className="border_countries">
+                                <h2 className="border_countries_heading">
+                                    Border Countries:
+                                </h2>
+                                {borderCountries?.map((neighbour) => {
+                                    const { cca3, name } =
+                                        neighbour as CountryType;
+                                    return (
+                                        <Link key={cca3} to={`/${cca3}`}>
+                                            <button className="border_country_name">
+                                                {name.common}
+                                            </button>
+                                        </Link>
+                                    );
+                                })}
+                            </div>
+                        )}
                     </div>
                 </div>
             </div>
-        </div>
+        </>
     );
 }
 
