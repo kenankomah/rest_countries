@@ -1,13 +1,18 @@
 import { createContext, useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import CountryList from "./components/country_list/country_list";
 import CountryDetails from "./components/country_details/country_details";
 import HomePage from "./components/home_page/home_page";
 
 export interface CountryType {
     name: {
         common: string;
-        nativeName: { [key: string]: { [key: string]: string } };
+        official: string;
+        nativeName: {
+            [key: string]: {
+                official: string;
+                common: string;
+            };
+        };
     };
     population: number;
     region: string;

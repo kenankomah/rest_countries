@@ -1,14 +1,10 @@
-import { Link } from "react-router-dom";
 import "./country_list.scss";
 import { CountryType } from "../../App";
+import CountryCard from "./country_card";
 
 interface CountryListProps {
     countryList: CountryType[];
 }
-
-const oneCountryInList = (countryList: CountryType[]) => {
-    return countryList.length === 1;
-};
 
 function CountryList({ countryList }: CountryListProps) {
     const ListContainerClass =
@@ -17,43 +13,9 @@ function CountryList({ countryList }: CountryListProps) {
             : "country_list_container";
     return (
         <div className={ListContainerClass}>
-            {countryList.map((country: any) => {
-                return (
-                    <div className="country_card" key={country.cca2}>
-                        <Link to={`/${country.cca3}`}>
-                            <img
-                                loading="lazy"
-                                src={country.flags.svg}
-                                alt={country.name.common}
-                                className="country_flag"
-                            />
-                            <div className="country_info">
-                                <h3>{country.name.common}</h3>
-                                <p>
-                                    <span className="country_info_label">
-                                        Population:
-                                    </span>
-                                    {country.population.toLocaleString()}
-                                </p>
-                                <p>
-                                    <span className="country_info_label">
-                                        Region:
-                                    </span>
-                                    {country.region}
-                                </p>
-                                <p>
-                                    <span className="country_info_label">
-                                        Capital:
-                                    </span>
-                                    {country.capital}
-                                </p>
-                            </div>
-                        </Link>
-                    </div>
-                );
+            {countryList.map((country: CountryType) => {
+                return <CountryCard key={country.cca3} country={country} />;
             })}
-
-            {/* flags too stretched on tablets */}
 
             {!countryList.length && (
                 <div className="empty_list">
