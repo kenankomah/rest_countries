@@ -24,19 +24,32 @@ img.theme_icon {
     transform: translateY(-50%);
 }
 
+.theme-toggle {
+    cursor: pointer;
+    &:hover {
+        .theme_icon_container {
+            background-color: darken(#fff, 9%);
+        }
+        .theme_text {
+            color: lighten($dark-text, 40%);
+        }
+    }
+}
+
+.dark-theme .theme-toggle:hover {
+    .theme_icon_container {
+        background-color: lighten($dark-grey, 6%);
+    }
+    .theme_text {
+        color: darken(#fff, 40%);
+    }
+}
+
 .dark-theme .theme_icon_container {
     img.theme_icon {
         width: 28px;
         height: 28px;
     }
-}
-
-.theme_icon_container:hover {
-    background-color: darken(#fff, 9%);
-}
-
-.dark-theme .theme_icon_container:hover {
-    background-color: lighten($dark-grey, 6%);
 }
 
 .dark-theme .nav-bar {

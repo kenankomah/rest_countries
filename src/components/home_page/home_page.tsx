@@ -8,10 +8,13 @@ import CountryList from "../country_list/country_list";
 
 export default function HomePage() {
     const countries = useContext(CountriesData);
+
+    //could these be set in the child components
     const [countryList, setCountryList] = useState(countries);
     const [regionList, setRegionList] = useState(countries);
 
     useEffect(() => {
+        //could these be set in the child components
         setCountryList(countries);
         setRegionList(countries);
     }, [countries]);

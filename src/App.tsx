@@ -34,14 +34,24 @@ function App() {
     const [countries, setCountries] = useState<CountryType[]>([]);
 
     useEffect(() => {
-        // Add error handling
+        // only catches non 400 errors
         async function fetchData() {
-            const response = await fetch("https://restcountries.com/v3.1/all");
-            const data = await response.json();
-            setCountries(data);
+            try {
+                const response = await fetch(
+                    "https://restcountries.com/v3.1/all"
+                );
+                const data = await response.json();
+                setCountries(data);
+            } catch (error) {
+                console.log(error);
+            }
         }
         fetchData();
     }, []);
+
+    if (!countries.length) {
+        return <div>Loading...</div>;
+    }
 
     return (
         <Router>

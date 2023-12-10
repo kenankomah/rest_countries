@@ -32,8 +32,8 @@ function Nav() {
         <nav className="nav-bar">
             <div className="content_container">
                 <p className="nav_text"> Where in the world?</p>
-                <div className="theme-toggle">
-                    <div onClick={themeToggle} className="theme_icon_container">
+                <div onClick={themeToggle} className="theme-toggle">
+                    <div className="theme_icon_container">
                         <img
                             className="theme_icon"
                             src={themeIcon}

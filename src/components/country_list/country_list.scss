@@ -41,6 +41,11 @@
             @include desktop-large {
                 max-width: 265px;
             }
+            &:hover {
+                transform: scale(1.02);
+                filter: drop-shadow(8px 8px 8px $shadow-light);
+                transition: all 0.3s ease-in-out;
+            }
         }
 
         margin-top: 100px;
@@ -79,4 +84,10 @@
 
     background-color: $dark-grey;
     filter: drop-shadow(0 0 7px $shadow-dark);
+
+    &:hover {
+        transform: scale(1.02);
+        filter: drop-shadow(8px 8px 8px $shadow-dark);
+        transition: all 0.3s ease-in-out;
+    }
 }
