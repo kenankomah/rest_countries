@@ -7,7 +7,7 @@ import "./country_details.scss";
 import CountryDetailsInfo from "./country_details_info";
 
 function CountryDetails() {
-    const countries = useContext(CountriesData);
+    const { countries } = useContext(CountriesData);
 
     let { country } = useParams();
 

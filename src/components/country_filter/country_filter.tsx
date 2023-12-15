@@ -10,7 +10,7 @@ export default function CountryFilter({
     setCountryList,
     setRegionList,
 }: CountryFilterProps) {
-    const countries = useContext(CountriesData);
+    const { countries } = useContext(CountriesData);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [region, setRegion] = useState("Filter by Region");
 

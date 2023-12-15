@@ -28,34 +28,43 @@ export interface CountryType {
     borders: string[];
 }
 
-export const CountriesData = createContext([] as CountryType[]);
+interface ContextValueType {
+    countries: CountryType[];
+    error: boolean;
+}
+
+export const CountriesData = createContext({} as ContextValueType);
 
 function App() {
     const [countries, setCountries] = useState<CountryType[]>([]);
+    const [error, setError] = useState(false);
 
     useEffect(() => {
-        // only catches non 400 errors
         async function fetchData() {
             try {
                 const response = await fetch(
                     "https://restcountries.com/v3.1/all"
                 );
+
+                if (!response.ok) {
+                    setError(error);
+                    throw new Error("Network response was not okk");
+                }
                 const data = await response.json();
                 setCountries(data);
             } catch (error) {
-                console.log(error);
+                setError(true);
+                console.error(error);
             }
         }
         fetchData();
-    }, []);
+    }, [error]);
 
-    if (!countries.length) {
-        return <div>Loading...</div>;
-    }
+    const contextValue = { countries, error };
 
     return (
         <Router>
-            <CountriesData.Provider value={countries}>
+            <CountriesData.Provider value={contextValue}>
                 <div className="app_container">
                     <Routes>
                         <Route path="/" element={<HomePage />} />

@@ -3,17 +3,13 @@ import ReactDOM from "react-dom/client";
 import "./index.scss";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-// import ErrorBoundary from "./ErrorBoundary";
-import { ErrorBoundary } from "react-error-boundary";
 
 const root = ReactDOM.createRoot(
     document.getElementById("root") as HTMLElement
 );
 root.render(
     <React.StrictMode>
-        {/* <ErrorBoundary fallback={<p>Something went wrong! </p>}> */}
         <App />
-        {/* </ErrorBoundary> */}
     </React.StrictMode>
 );
 
