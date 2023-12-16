@@ -19,6 +19,8 @@ export default function CountryFilter({
             setRegionList(countries);
             return countries;
         }
+
+        //turn the function in setRegionList into a callback function that can be unit tested
         setRegionList(countries.filter((country) => country.region === region));
         return countries.filter((country) => country.region === region);
     }

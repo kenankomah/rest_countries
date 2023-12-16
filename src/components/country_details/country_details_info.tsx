@@ -1,49 +1,45 @@
-import { Link } from "react-router-dom";
-import { CountryType } from "../../App";
+import { Link, useParams } from "react-router-dom";
+import { CountriesData, CountryType } from "../../App";
+import { useContext } from "react";
 
-//central place to store the type of the props?
+function CountryDetailsInfo() {
+    const { countries } = useContext(CountriesData);
 
-interface CountryDetailsInfoProps {
-    name: {
-        common: string;
-        official: string;
-        nativeName: {
-            [key: string]: {
-                official: string;
-                common: string;
-            };
-        };
-    };
-    nativeName: string;
-    population: number;
-    region: string;
-    subregion: string;
-    capital: string;
-    tld: string;
-    languages: {
-        [key: string]: string;
-    };
-    borderCountries: {
-        cca3: string;
-        name: {
-            common: string;
-        };
-    }[];
-    currencyNameList: string[];
-}
+    let { country } = useParams();
 
-function CountryDetailsInfo({
-    name,
-    nativeName,
-    population,
-    region,
-    subregion,
-    capital,
-    tld,
-    languages,
-    borderCountries,
-    currencyNameList,
-}: CountryDetailsInfoProps) {
+    function findSelectedCountry(
+        country: string | undefined,
+        countries: CountryType[]
+    ): CountryType | undefined {
+        return countries.find((nation) => nation.cca3 === country);
+    }
+
+    const selectedCountry = findSelectedCountry(country, countries);
+
+    const {
+        name,
+        languages,
+        currencies,
+        population,
+        region,
+        subregion,
+        capital,
+        tld,
+        borders,
+    } = selectedCountry as CountryType;
+
+    const borderCountries = borders?.map((border) => {
+        return countries.find(
+            (country) => country.cca3 === border
+        ) as CountryType;
+    });
+
+    const nativeName = Object.values(name.nativeName)[0].common;
+    const currencyArray = Object.values(currencies);
+    const currencyNameList = currencyArray.map(({ name }) => {
+        return name;
+    });
+
     return (
         <div className="country_details_info">
             <div className="info_container">

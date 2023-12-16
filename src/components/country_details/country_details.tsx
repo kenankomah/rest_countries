@@ -8,9 +8,7 @@ import CountryDetailsInfo from "./country_details_info";
 
 function CountryDetails() {
     const { countries } = useContext(CountriesData);
-
     let { country } = useParams();
-
     const selectedCountry = countries.find((nation) => nation.cca3 === country);
 
     if (!selectedCountry)
@@ -23,30 +21,7 @@ function CountryDetails() {
             </div>
         );
 
-    const {
-        name,
-        languages,
-        currencies,
-        population,
-        region,
-        subregion,
-        capital,
-        tld,
-        borders,
-        flags,
-    } = selectedCountry as CountryType;
-
-    const borderCountries = borders?.map((border) => {
-        return countries.find(
-            (country) => country.cca3 === border
-        ) as CountryType;
-    });
-
-    const nativeName = Object.values(name.nativeName)[0].common;
-    const currencyArray = Object.values(currencies);
-    const currencyNameList = currencyArray.map(({ name }) => {
-        return name;
-    });
+    const { name, flags } = selectedCountry as CountryType;
 
     return (
         <>
@@ -65,18 +40,7 @@ function CountryDetails() {
                         alt={name.common}
                     />
 
-                    <CountryDetailsInfo
-                        name={name}
-                        currencyNameList={currencyNameList}
-                        nativeName={nativeName}
-                        languages={languages}
-                        population={population}
-                        region={region}
-                        subregion={subregion}
-                        capital={capital}
-                        tld={tld}
-                        borderCountries={borderCountries}
-                    />
+                    <CountryDetailsInfo />
                 </div>
             </div>
         </>

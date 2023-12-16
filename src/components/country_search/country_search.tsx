@@ -13,6 +13,7 @@ export default function CountrySearch({
 }: CountrySearchProps) {
     const inputRef = useRef<HTMLInputElement>(null);
 
+    //turn this into a function that can be unit tested
     function searchByCountryName(name: string) {
         return regionList.filter((country: CountryType) =>
             country.name.common.toLowerCase().includes(name.toLowerCase())
