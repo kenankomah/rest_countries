@@ -12,6 +12,7 @@ export default function CountrySearch({
     setCountryList,
 }: CountrySearchProps) {
     const inputRef = useRef<HTMLInputElement>(null);
+
     function searchByCountryName(name: string) {
         return regionList.filter((country: CountryType) =>
             country.name.common.toLowerCase().includes(name.toLowerCase())
@@ -32,6 +33,7 @@ export default function CountrySearch({
             placeholder="Search for a country..."
             ref={inputRef}
             onChange={(e: ChangeEvent<HTMLInputElement>) => {
+                document.body.classList.add("searching");
                 const target = e.target as HTMLInputElement;
                 setCountryList(searchByCountryName(target.value));
             }}

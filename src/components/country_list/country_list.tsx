@@ -2,6 +2,7 @@ import "./country_list.scss";
 import { CountriesData, CountryType } from "../../App";
 import CountryCard from "./country_card";
 import { useContext } from "react";
+import Skeleton from "../skeleton/skeleton";
 
 interface CountryListProps {
     countryList: CountryType[];
@@ -9,8 +10,6 @@ interface CountryListProps {
 
 function CountryList({ countryList }: CountryListProps) {
     const { error, countries } = useContext(CountriesData);
-
-    console.log(countries.length);
 
     if (error) {
         return (
@@ -20,12 +19,7 @@ function CountryList({ countryList }: CountryListProps) {
         );
     }
 
-    if (!countries.length)
-        return (
-            <div className="empty_list">
-                <h3>Loadingggggg</h3>
-            </div>
-        );
+    if (!countries.length) return <Skeleton />;
 
     const ListContainerClass =
         countryList.length === 1
