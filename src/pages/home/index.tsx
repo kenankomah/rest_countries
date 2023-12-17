@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import Nav from "../../components/nav/nav";
 import { CountriesData } from "../../App";
 import CountrySearch from "./country_search/country_search";
-import CountryFilter from "./country_filter/country_filter";
+import RegionSelector from "./region_selector/region_selector";
 import "./home_page.scss";
 import CountryList from "./country_list/country_list";
 
@@ -27,7 +27,7 @@ export default function HomePage() {
                         regionList={regionList}
                         setCountryList={setCountryList}
                     />
-                    <CountryFilter
+                    <RegionSelector
                         setCountryList={setCountryList}
                         setRegionList={setRegionList}
                     />

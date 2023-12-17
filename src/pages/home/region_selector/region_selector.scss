@@ -1,7 +1,7 @@
 @import "../../../css/variables.scss";
 @import "../../../css/media_queries.scss";
 
-.dropbtn {
+.dropdown-button {
     background-color: #fff;
     position: relative;
     padding: 15px 20px;
@@ -40,7 +40,7 @@
     }
 }
 
-.dark-theme .dropbtn {
+.dark-theme .dropdown-button {
     filter: drop-shadow(0 0 7px $shadow-dark);
     .chevron_container {
         background-image: url("../../../../public/assets/chevron_down_icon_white.svg");
@@ -51,7 +51,7 @@
     }
 }
 
-.dark-theme .dropbtn {
+.dark-theme .dropdown-button {
     background-color: $dark-grey;
     color: #fff;
 }

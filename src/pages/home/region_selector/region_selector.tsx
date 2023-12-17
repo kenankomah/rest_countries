@@ -1,19 +1,32 @@
-import { MouseEvent, useContext, useState } from "react";
+import { MouseEvent, useContext, useEffect, useState } from "react";
 import { CountriesData } from "../../../App";
-import "./country_filter.scss";
+import "./region_selector.scss";
 import { regionFilter } from "../utilities";
 interface CountryFilterProps {
     setCountryList: Function;
     setRegionList: Function;
 }
 
-export default function CountryFilter({
+export default function RegionSelector({
     setCountryList,
     setRegionList,
 }: CountryFilterProps) {
     const { countries } = useContext(CountriesData);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [region, setRegion] = useState("Filter by Region");
+
+    useEffect(() => {
+        document.querySelector("html")?.addEventListener("click", (e) => {
+            const target = e.target as HTMLElement;
+            if (
+                target?.classList.contains("dropdown-content") ||
+                target?.classList.contains("dropdown-button") ||
+                target?.classList.contains("chevron_container")
+            )
+                return;
+            setIsMenuOpen(false);
+        });
+    }, []);
 
     function filterByRegion(region: string) {
         if (region === "Filter by Region" || region === "All Regions") {
@@ -42,7 +55,7 @@ export default function CountryFilter({
 
     return (
         <div className="dropdown" onClick={menuSate}>
-            <button className="dropbtn">
+            <button className="dropdown-button">
                 {region}
 
                 <div className={chevronClass}></div>
