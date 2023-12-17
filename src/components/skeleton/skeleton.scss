@@ -29,9 +29,7 @@
 }
 
 .card {
-    background-color: #f5f8fc;
-    filter: drop-shadow(0 0 7px $shadow-dark);
-
+    background-color: #fff;
     padding: 0.5rem;
     border-radius: 5px;
     border: 1px solid rgba(82, 88, 102, 0.2);
@@ -92,7 +90,6 @@
     -o-object-fit: cover;
     object-fit: cover;
     margin: auto;
-    border-radius: 0.75rem;
 }
 
 .skeleton {

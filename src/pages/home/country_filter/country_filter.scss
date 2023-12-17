@@ -1,5 +1,5 @@
-@import "../../css/variables.scss";
-@import "../../css/media_queries.scss";
+@import "../../../css/variables.scss";
+@import "../../../css/media_queries.scss";
 
 .dropbtn {
     background-color: #fff;
@@ -22,7 +22,7 @@
         top: 1px;
         width: 12px;
         height: 10px;
-        background-image: url("../../../public/assets/chevron_down_icon.svg");
+        background-image: url("../../../../public/assets/chevron_down_icon.svg");
         background-size: 12px;
         background-repeat: no-repeat;
         &.rotate {
@@ -43,7 +43,7 @@
 .dark-theme .dropbtn {
     filter: drop-shadow(0 0 7px $shadow-dark);
     .chevron_container {
-        background-image: url("../../../public/assets/chevron_down_icon_white.svg");
+        background-image: url("../../../../public/assets/chevron_down_icon_white.svg");
     }
 
     &:hover {

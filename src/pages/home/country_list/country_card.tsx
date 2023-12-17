@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { CountryType } from "../../App";
+import { CountryType } from "../../../App";
 
 interface CountryCardProps {
     country: CountryType;

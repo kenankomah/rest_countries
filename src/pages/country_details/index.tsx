@@ -2,14 +2,16 @@ import { useContext } from "react";
 import { Link, useParams } from "react-router-dom";
 import { CountriesData } from "../../App";
 import { CountryType } from "../../App";
-import Nav from "../nav/nav";
+import Nav from "../../components/nav/nav";
 import "./country_details.scss";
 import CountryDetailsInfo from "./country_details_info";
+import { findSelectedCountry } from "./utilities";
 
 function CountryDetails() {
     const { countries } = useContext(CountriesData);
     let { country } = useParams();
-    const selectedCountry = countries.find((nation) => nation.cca3 === country);
+
+    const selectedCountry = findSelectedCountry(country, countries);
 
     if (!selectedCountry)
         return (

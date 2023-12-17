@@ -1,10 +1,10 @@
 import { useContext, useEffect, useState } from "react";
-import Nav from "../nav/nav";
+import Nav from "../../components/nav/nav";
 import { CountriesData } from "../../App";
-import CountrySearch from "../country_search/country_search";
-import CountryFilter from "../country_filter/country_filter";
+import CountrySearch from "./country_search/country_search";
+import CountryFilter from "./country_filter/country_filter";
 import "./home_page.scss";
-import CountryList from "../country_list/country_list";
+import CountryList from "./country_list/country_list";
 
 export default function HomePage() {
     const { countries } = useContext(CountriesData);

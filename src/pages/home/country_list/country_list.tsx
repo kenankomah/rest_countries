@@ -1,8 +1,8 @@
 import "./country_list.scss";
-import { CountriesData, CountryType } from "../../App";
+import { CountriesData, CountryType } from "../../../App";
 import CountryCard from "./country_card";
 import { useContext } from "react";
-import Skeleton from "../skeleton/skeleton";
+import Skeleton from "../../../components/skeleton/skeleton";
 
 interface CountryListProps {
     countryList: CountryType[];

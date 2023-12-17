@@ -1,6 +1,7 @@
 import { ChangeEvent, useEffect, useRef } from "react";
-import { CountryType } from "../../App";
+import { CountryType } from "../../../App";
 import "./country_search.scss";
+import { searchByCountryName } from "../utilities";
 
 interface CountrySearchProps {
     regionList: CountryType[];
@@ -13,17 +14,10 @@ export default function CountrySearch({
 }: CountrySearchProps) {
     const inputRef = useRef<HTMLInputElement>(null);
 
-    //turn this into a function that can be unit tested
-    function searchByCountryName(name: string) {
-        return regionList.filter((country: CountryType) =>
-            country.name.common.toLowerCase().includes(name.toLowerCase())
-        );
-    }
-
     useEffect(() => {
         const value = inputRef.current?.value;
         if (value) {
-            setCountryList(searchByCountryName(value));
+            setCountryList(searchByCountryName(value, regionList));
         }
     }, [regionList]);
 
@@ -36,7 +30,7 @@ export default function CountrySearch({
             onChange={(e: ChangeEvent<HTMLInputElement>) => {
                 document.body.classList.add("searching");
                 const target = e.target as HTMLInputElement;
-                setCountryList(searchByCountryName(target.value));
+                setCountryList(searchByCountryName(target.value, regionList));
             }}
         />
     );
