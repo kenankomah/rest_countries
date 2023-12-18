@@ -12,7 +12,7 @@ function CountryCard({ country }: CountryCardProps) {
                 <img
                     loading="lazy"
                     src={country.flags.svg}
-                    alt={country.name.common}
+                    alt={country.flags.alt}
                     className="country_flag"
                 />
                 <div className="country_info">

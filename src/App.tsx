@@ -16,12 +16,13 @@ export interface CountryType {
     };
     population: number;
     region: string;
-    capital: string;
+    capital: string[];
     flags: {
         svg: string;
+        alt: string;
     };
     cca3: string;
-    tld: string;
+    tld: string[];
     languages: { [key: string]: string };
     currencies: { [key: string]: { [key: string]: string } };
     subregion: string;
@@ -52,6 +53,12 @@ function App() {
                 }
                 const data = await response.json();
                 setCountries(data);
+                // console.log(
+                //     data.filter(
+                //         (country: CountryType) =>
+                //             country.name.common === "Ghana"
+                //     )
+                // );
             } catch (error) {
                 setErrorStatus(true);
                 console.error(error);
@@ -68,7 +75,10 @@ function App() {
                 <div className="app_container">
                     <Routes>
                         <Route path="/" element={<HomePage />} />
-                        <Route path="/:country" element={<CountryDetails />} />
+                        <Route
+                            path="/:countryCode"
+                            element={<CountryDetails />}
+                        />
                     </Routes>
                 </div>
             </CountriesData.Provider>

@@ -6,9 +6,10 @@ import { findSelectedCountry } from "./utilities";
 function CountryDetailsInfo() {
     const { countries } = useContext(CountriesData);
 
-    let { country } = useParams();
+    let { countryCode } = useParams();
+    console.log(countryCode);
 
-    const selectedCountry = findSelectedCountry(country, countries);
+    const selectedCountry = findSelectedCountry(countryCode, countries);
 
     const {
         name,

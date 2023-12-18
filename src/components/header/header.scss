@@ -52,13 +52,13 @@ img.theme_icon {
     }
 }
 
-.dark-theme .nav-bar {
+.dark-theme .header-bar {
     background-color: $dark-grey;
     filter: drop-shadow(0 0 7px $shadow-dark);
     color: #fff;
 }
 
-.nav-bar {
+.header-bar {
     color: $dark-text;
     .content_container {
         display: flex;
@@ -84,7 +84,7 @@ img.theme_icon {
         padding: 0 16px;
     }
 
-    .nav_text {
+    .header_text {
         font-size: 24px;
         font-weight: bolder;
         display: flex;

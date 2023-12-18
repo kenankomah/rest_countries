@@ -27,6 +27,7 @@ export default function CountrySearch({
             type="text"
             placeholder="Search for a country..."
             ref={inputRef}
+            name="search"
             onChange={(e: ChangeEvent<HTMLInputElement>) => {
                 document.body.classList.add("searching");
                 const target = e.target as HTMLInputElement;

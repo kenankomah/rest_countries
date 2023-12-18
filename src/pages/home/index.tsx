@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import Nav from "../../components/nav/nav";
+import Nav from "../../components/header/header";
 import { CountriesData } from "../../App";
 import CountrySearch from "./country_search/country_search";
 import RegionSelector from "./region_selector/region_selector";
@@ -21,7 +21,7 @@ export default function HomePage() {
         <div className="App ">
             <Nav />
 
-            <div className="container">
+            <main className="container">
                 <div className="search_and_filter">
                     <CountrySearch
                         regionList={regionList}
@@ -34,7 +34,7 @@ export default function HomePage() {
                 </div>
 
                 <CountryList countryList={countryList} />
-            </div>
+            </main>
         </div>
     );
 }

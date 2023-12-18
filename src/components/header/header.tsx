@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./nav.scss";
+import "./header.scss";
 
 type classListActions = "add" | "remove" | "contains" | "toggle";
 
@@ -9,7 +9,7 @@ function themeClassHandler(action: classListActions) {
     return html?.classList[action]("dark-theme");
 }
 
-function Nav() {
+function Header() {
     localStorage.getItem("darkMode") === "true"
         ? themeClassHandler("add")
         : themeClassHandler("remove");
@@ -29,9 +29,9 @@ function Nav() {
         : "/assets/dark_mode_icon.svg";
 
     return (
-        <nav className="nav-bar">
+        <header className="header-bar">
             <div className="content_container">
-                <p className="nav_text"> Where in the world?</p>
+                <h1 className="header_text"> Where in the world?</h1>
                 <div onClick={themeToggle} className="theme-toggle">
                     <div className="theme_icon_container">
                         <img
@@ -43,8 +43,8 @@ function Nav() {
                     <span className="theme_text">{themeText}</span>
                 </div>
             </div>
-        </nav>
+        </header>
     );
 }
 
-export default Nav;
+export default Header;

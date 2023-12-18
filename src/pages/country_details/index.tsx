@@ -2,16 +2,16 @@ import { useContext } from "react";
 import { Link, useParams } from "react-router-dom";
 import { CountriesData } from "../../App";
 import { CountryType } from "../../App";
-import Nav from "../../components/nav/nav";
+import Header from "../../components/header/header";
 import "./country_details.scss";
 import CountryDetailsInfo from "./country_details_info";
 import { findSelectedCountry } from "./utilities";
 
 function CountryDetails() {
     const { countries } = useContext(CountriesData);
-    let { country } = useParams();
+    let { countryCode } = useParams();
 
-    const selectedCountry = findSelectedCountry(country, countries);
+    const selectedCountry = findSelectedCountry(countryCode, countries);
 
     if (!selectedCountry)
         return (
@@ -23,11 +23,11 @@ function CountryDetails() {
             </div>
         );
 
-    const { name, flags } = selectedCountry as CountryType;
+    const { flags } = selectedCountry as CountryType;
 
     return (
         <>
-            <Nav />
+            <Header />
             <div className="country_details">
                 <Link to="/">
                     <button className="back_button">
@@ -39,7 +39,7 @@ function CountryDetails() {
                     <img
                         className="country_flag"
                         src={flags.svg}
-                        alt={name.common}
+                        alt={flags.alt}
                     />
 
                     <CountryDetailsInfo />
