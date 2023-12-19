@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import { Link, useParams } from "react-router-dom";
 import { CountriesData } from "../../App";
-import { CountryType } from "../../App";
 import Header from "../../components/header/header";
 import "./country_details.scss";
 import CountryDetailsInfo from "./country_details_info";
@@ -23,8 +22,6 @@ function CountryDetails() {
             </div>
         );
 
-    const { flags } = selectedCountry as CountryType;
-
     return (
         <>
             <Header />
@@ -34,16 +31,7 @@ function CountryDetails() {
                         <span className="button_text">Back </span>
                     </button>
                 </Link>
-
-                <div className="country_details_container">
-                    <img
-                        className="country_flag"
-                        src={flags.svg}
-                        alt={flags.alt}
-                    />
-
-                    <CountryDetailsInfo />
-                </div>
+                <CountryDetailsInfo />
             </div>
         </>
     );
