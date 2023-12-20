@@ -1,25 +1,26 @@
 @import "../../../css/variables.scss";
 @import "../../../css/media_queries.scss";
+@import "../../../css/functions.scss";
 
 .container {
-    max-width: 1280px;
+    max-width: pxToRem(1280px);
     margin: 0 auto;
-    padding: 0 55px;
+    padding: 0 pxToRem(55px);
 
     @include mobile {
-        padding: 0 16px;
+        padding: 0 1rem;
     }
 
     .country_list_container {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        grid-gap: 75px;
+        grid-template-columns: repeat(auto-fit, minmax(pxToRem(250px), 1fr));
+        grid-gap: pxToRem(75px);
         width: 100%;
         margin: 0 auto;
 
         &.single_country {
             @include tablet {
-                max-width: 300px;
+                max-width: pxToRem(300px);
                 margin-left: 0;
                 margin-right: 0;
                 display: block;
@@ -31,15 +32,15 @@
         }
 
         @include mobile {
-            max-width: 265px;
+            max-width: pxToRem(265px);
         }
 
         .country_card {
             background-color: #fff;
-            border-radius: 5px;
+            border-radius: pxToRem(5px);
             filter: drop-shadow(0 0 4px $shadow-light);
             @include desktop-large {
-                max-width: 265px;
+                max-width: pxToRem(265px);
             }
             &:hover {
                 transform: scale(1.02);
@@ -48,29 +49,29 @@
             }
         }
 
-        margin-top: 100px;
+        margin-top: pxToRem(100px);
 
         .country_flag {
             width: 100%;
-            height: 160px;
+            height: 10rem;
             object-fit: cover;
-            border-radius: 5px 5px 0 0;
+            border-radius: pxToRem(5px) pxToRem(5px) 0 0;
         }
         .country_info {
-            padding: 0 25px 30px 25px;
+            padding: 0 pxToRem(25px) pxToRem(30px) pxToRem(25px);
             h3 {
-                font-size: 18px;
+                font-size: pxToRem(18px);
                 font-weight: 800;
-                margin-bottom: 20px;
+                margin-bottom: pxToRem(20px);
             }
             p {
-                font-size: 14px;
+                font-size: pxToRem(14px);
                 font-weight: 300;
-                margin: 5px 0;
+                margin: pxToRem(5px) 0;
             }
             .country_info_label {
                 font-weight: bold;
-                margin-right: 4px;
+                margin-right: pxToRem(4px);
             }
         }
     }

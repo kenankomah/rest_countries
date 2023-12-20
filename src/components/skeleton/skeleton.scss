@@ -1,20 +1,21 @@
 @import "../../css/media_queries.scss";
 @import "../../css/variables.scss";
+@import "../../css/functions.scss";
 
 .skeleton_container {
-    margin-top: 100px;
+    margin-top: pxToRem(100px);
     width: 100%;
     display: grid;
-    gap: 75px;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: pxToRem(75px);
+    grid-template-columns: repeat(auto-fit, minmax(pxToRem(250px), 1fr));
 
     @include desktop-large {
         grid-template-columns: repeat(4, 1fr);
     }
 
     @include mobile {
-        margin: 100px auto;
-        max-width: 265px;
+        margin: pxToRem(100px) auto;
+        max-width: pxToRem(265px);
     }
 }
 
@@ -31,7 +32,7 @@
 .card {
     background-color: #fff;
     padding: 0.5rem;
-    border-radius: 5px;
+    border-radius: pxToRem(5px);
     border: 1px solid rgba(82, 88, 102, 0.2);
     display: -webkit-box;
     display: -ms-flexbox;
@@ -68,8 +69,8 @@
 }
 
 .card__header .header__title {
-    font-size: 1.0625rem;
-    line-height: 1.375rem;
+    font-size: pxToRem(17px);
+    line-height: pxToRem(22px);
     color: #0e1217;
     font-weight: 700;
     margin: 0.5rem;

@@ -1,46 +1,45 @@
 @import "../../css/variables.scss";
 @import "../../css/media_queries.scss";
+@import "../../css/functions.scss";
 
 .country_details {
     color: $dark-text;
-    padding: 0 55px;
-    max-width: 1280px;
+    padding: 0 pxToRem(55px);
+    max-width: pxToRem(1280px);
     margin: 0 auto;
 
     @include mobile {
-        padding: 0 16px;
+        padding: 0 1rem;
     }
 
     .country_details_info {
-        // border: 1px solid grey;
-
         .info_text {
-            margin: 10px 0;
+            margin: pxToRem(10px) 0;
             @include mobile {
-                font-size: 14px;
+                font-size: pxToRem(14px);
             }
         }
 
         .info_label {
             font-weight: 600;
-            margin-right: 5px;
+            margin-right: pxToRem(5px);
         }
     }
 
     .back_button {
         background-image: url("../../../public/assets/arrows-left.svg");
-        background-position: 34px center;
+        background-position: pxToRem(34px) center;
         background-repeat: no-repeat;
-        background-size: 22px 22px;
-        margin-top: 160px;
-        width: 135px;
-        height: 40px;
-        border-radius: 5px;
+        background-size: pxToRem(22px) pxToRem(22px);
+        margin-top: pxToRem(160px);
+        width: pxToRem(135px);
+        height: pxToRem(40px);
+        border-radius: pxToRem(5px);
         border: none;
         border: 1px solid grey;
         color: $dark-text;
         font-weight: 400;
-        font-size: 16px;
+        font-size: pxToRem(16px);
         cursor: pointer;
         background-color: #fff;
         border: none;
@@ -50,31 +49,31 @@
         }
 
         .button_text {
-            margin-left: 25px;
+            margin-left: pxToRem(25px);
         }
 
         @include mobile {
-            height: 32px;
-            width: 105px;
-            margin-top: 120px;
-            background-position: 22px center;
-            font-size: 14px;
+            height: pxToRem(32px);
+            width: pxToRem(105px);
+            margin-top: pxToRem(120px);
+            background-position: pxToRem(22px) center;
+            font-size: pxToRem(14px);
         }
     }
 
     .country_details_container {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-gap: 50px;
-        margin-top: 70px;
+        grid-gap: pxToRem(50px);
+        margin-top: pxToRem(70px);
         align-items: center;
 
         @include tablet {
-            grid-gap: 50px;
+            grid-gap: pxToRem(50px);
         }
 
         @include desktop {
-            grid-gap: 120px;
+            grid-gap: pxToRem(120px);
         }
         .country_flag {
             width: 100%;
@@ -83,7 +82,7 @@
         .info_list {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            grid-gap: 20px;
+            grid-gap: pxToRem(20px);
 
             @include mobile {
                 grid-template-columns: 1fr;
@@ -92,41 +91,41 @@
 
         .border_countries {
             display: flex;
-            gap: 5px;
+            gap: pxToRem(5px);
             flex-wrap: wrap;
-            margin-top: 50px;
+            margin-top: pxToRem(50px);
             margin-bottom: 0;
             align-items: center;
 
             @include mobile {
-                margin-bottom: 30px;
+                margin-bottom: pxToRem(30px);
             }
 
             .border_countries_heading {
                 margin: 0;
-                margin-right: 15px;
-                font-size: 16px;
+                margin-right: pxToRem(15px);
+                font-size: 1rem;
             }
 
             .border_country_name {
                 background-color: #fff;
-                padding: 5px;
+                padding: pxToRem(5px);
                 border: none;
-                border-radius: 5px;
-                min-width: 90px;
+                border-radius: pxToRem(5px);
+                min-width: pxToRem(90px);
                 filter: drop-shadow(0 0 4px $shadow-light);
                 cursor: pointer;
-                height: 32px;
-                font-size: 14px;
+                height: pxToRem(32px);
+                font-size: pxToRem(14px);
 
                 &:hover {
                     background-color: darken(#fff, 3%);
                 }
 
                 @include mobile {
-                    font-size: 12px;
-                    min-width: 70px;
-                    height: 28px;
+                    font-size: pxToRem(12px);
+                    min-width: pxToRem(70px);
+                    height: pxToRem(28px);
                 }
             }
         }
@@ -134,7 +133,7 @@
         .country_name {
             margin-top: 0;
             @include mobile {
-                font-size: 22px;
+                font-size: pxToRem(22px);
             }
         }
 
@@ -162,11 +161,11 @@
 }
 
 .country_not_found {
-    font-size: 30px;
+    font-size: pxToRem(30px);
     height: 100vh;
 
     @include mobile {
-        font-size: 20px;
+        font-size: pxToRem(20px);
     }
 
     p {

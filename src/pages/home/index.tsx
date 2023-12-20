@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import Nav from "../../components/header/header";
+import Header from "../../components/header/header";
 import { CountriesData } from "../../App";
 import CountrySearch from "./country_search/country_search";
 import RegionSelector from "./region_selector/region_selector";
@@ -19,7 +19,7 @@ export default function HomePage() {
 
     return (
         <div className="App ">
-            <Nav />
+            <Header />
 
             <main className="container">
                 <div className="search_and_filter">

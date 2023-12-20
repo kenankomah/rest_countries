@@ -1,13 +1,14 @@
 @import "../../css/variables.scss";
 @import "../../css/media_queries.scss";
 @import "../../css/mixins.scss";
+@import "../../css/functions.scss";
 
 .theme_icon_container {
     height: 2.5rem;
     width: 2.5rem;
     border-radius: 50%;
     cursor: pointer;
-    margin-right: 5px;
+    margin-right: pxToRem(5px);
     @include mobile {
         height: 2rem;
         width: 2rem;
@@ -18,8 +19,8 @@ img.theme_icon {
     margin: 0 auto;
     display: block;
     position: relative;
-    width: 20px;
-    height: 20px;
+    width: pxToRem(20px);
+    height: pxToRem(20px);
     top: 50%;
     transform: translateY(-50%);
 }
@@ -31,7 +32,7 @@ img.theme_icon {
             background-color: darken(#fff, 9%);
         }
         .theme_text {
-            color: lighten($dark-text, 40%);
+            color: lighten($dark-text, 30%);
         }
     }
 }
@@ -41,14 +42,14 @@ img.theme_icon {
         background-color: lighten($dark-grey, 6%);
     }
     .theme_text {
-        color: darken(#fff, 40%);
+        color: darken(#fff, 30%);
     }
 }
 
 .dark-theme .theme_icon_container {
     img.theme_icon {
-        width: 28px;
-        height: 28px;
+        width: pxToRem(28px);
+        height: pxToRem(28px);
     }
 }
 
@@ -63,17 +64,17 @@ img.theme_icon {
     .content_container {
         display: flex;
         justify-content: space-between;
-        max-width: 1280px;
+        max-width: pxToRem(1280px);
         margin: 0 auto;
         position: relative;
         top: 50%;
         transform: translateY(-50%);
     }
     z-index: 1;
-    padding: 0 55px;
+    padding: 0 pxToRem(55px);
     border: none;
     width: 100%;
-    height: 80px;
+    height: 5rem;
     box-sizing: border-box;
     position: fixed;
     top: 0;
@@ -81,16 +82,16 @@ img.theme_icon {
     filter: drop-shadow(0 0 7px $shadow-light);
 
     @include mobile {
-        padding: 0 16px;
+        padding: 0 pxToRem(16px);
     }
 
     .header_text {
-        font-size: 24px;
+        font-size: 1.5rem;
         font-weight: bolder;
         display: flex;
         align-items: center;
         @include mobile {
-            font-size: 14px;
+            font-size: pxToRem(14px);
         }
     }
 
@@ -98,10 +99,10 @@ img.theme_icon {
         display: flex;
         align-items: center;
         .theme_text {
-            margin-bottom: 2px;
-            font-size: 16px;
+            margin-bottom: pxToRem(2px);
+            font-size: 1rem;
             @include mobile {
-                font-size: 12px;
+                font-size: 0.75rem;
             }
         }
     }
