@@ -4,7 +4,7 @@
 This project is based on a Frontend Mentor challenge.
 I used Frontend Mentor because in some ways this was like a real world project where you are given a brief, design and assets to work with.
 
-<a href="https://rest-countries-cd0d3.web.app/" target="_blank">Live site for this project</a>
+<a href="https://rest-countries-cd0d3.web.app/" target="_blank">Live site for this project</a> <br/>
 <a href="https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca" target="_blank">Rest Countries challenge</a> <br/>
 
 
