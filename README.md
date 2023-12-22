@@ -1,7 +1,7 @@
 This is a Frontend Mentor project
 
-[Rest Countries](https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca)
 <a href="https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca" target="_blank">Rest Countries</a>
+<a href="https://rest-countries-cd0d3.web.app/" target="_blank">Live site</a>
 
 
 In the project directory, you can run:
