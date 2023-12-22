@@ -3,7 +3,7 @@
 @import "../../css/functions.scss";
 
 .skeleton_container {
-    margin-top: pxToRem(100px);
+    margin-top: pxToRem(52px);
     width: 100%;
     display: grid;
     gap: pxToRem(75px);
@@ -14,7 +14,7 @@
     }
 
     @include mobile {
-        margin: pxToRem(100px) auto;
+        margin: pxToRem(90px) auto;
         max-width: pxToRem(265px);
     }
 }
