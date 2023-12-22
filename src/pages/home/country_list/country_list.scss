@@ -17,6 +17,7 @@
         grid-gap: pxToRem(75px);
         width: 100%;
         margin: 0 auto;
+        margin-top: pxToRem(52px);
 
         &.single_country {
             @include tablet {
@@ -33,6 +34,7 @@
 
         @include mobile {
             max-width: pxToRem(265px);
+            margin-top: pxToRem(90px);
         }
 
         .country_card {
@@ -48,8 +50,6 @@
                 transition: all 0.3s ease-in-out;
             }
         }
-
-        margin-top: pxToRem(100px);
 
         .country_flag {
             width: 100%;
