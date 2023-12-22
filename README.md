@@ -1,10 +1,12 @@
-This is a Frontend Mentor project
+This project is based on a Frontend Mentor challenge,
+I used Frontend Mentor because much like in a real world project scenario you are given a brief, design and assets <br/>
+to work with.
 
-<a href="https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca" target="_blank">Rest Countries</a>
+<a href="https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca" target="_blank">Rest Countries challenge</a> <br/>
 <a href="https://rest-countries-cd0d3.web.app/" target="_blank">Live site</a>
 
 
-In the project directory, you can run:
+To use locally go to the project directory and run:
 
 ### `npm start`
 
