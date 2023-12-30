@@ -49,6 +49,9 @@
                 filter: drop-shadow(8px 8px 8px $shadow-light);
                 transition: all 0.3s ease-in-out;
             }
+            .country_name {
+                font-size: pxToRem(18px);
+            }
         }
 
         .country_flag {

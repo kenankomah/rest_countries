@@ -18,7 +18,7 @@ function CountryCard({ country }: CountryCardProps) {
                     className="country_flag"
                 />
                 <div className="country_info">
-                    <h2>{name.common}</h2>
+                    <h2 className="country_name">{name.common}</h2>
                     <p>
                         <span className="country_info_label">Population:</span>
                         {population.toLocaleString()}
