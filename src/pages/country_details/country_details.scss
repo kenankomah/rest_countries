@@ -3,181 +3,185 @@
 @import "../../css/functions.scss";
 
 .country_details {
-    color: $dark-text;
-    padding: 0 pxToRem(55px);
-    max-width: pxToRem(1280px);
-    margin: 0 auto;
+	color: $dark-text;
+	padding: 0 pxToRem(55px);
+	max-width: pxToRem(1280px);
+	margin: 0 auto;
 
-    @include mobile {
-        padding: 0 1rem;
-    }
+	@include mobile {
+		padding: 0 1rem;
+	}
 
-    .country_details_info {
-        .info_text {
-            margin: pxToRem(10px) 0;
-            @include mobile {
-                font-size: pxToRem(14px);
-            }
-        }
+	.country_details_info {
+		.info_text {
+			margin: pxToRem(10px) 0;
+			@include mobile {
+				font-size: pxToRem(14px);
+			}
+		}
 
-        .info_label {
-            font-weight: 600;
-            margin-right: pxToRem(5px);
-        }
-    }
+		.info_label {
+			font-weight: 600;
+			margin-right: pxToRem(5px);
+		}
+	}
 
-    .back_button {
-        background-image: url("../../../public/assets/arrows-left.svg");
-        background-position: pxToRem(34px) center;
-        background-repeat: no-repeat;
-        background-size: pxToRem(22px) pxToRem(22px);
-        margin-top: pxToRem(160px);
-        width: pxToRem(135px);
-        height: pxToRem(40px);
-        border-radius: pxToRem(5px);
-        border: none;
-        border: 1px solid grey;
-        color: $dark-text;
-        font-weight: 400;
-        font-size: pxToRem(16px);
-        cursor: pointer;
-        background-color: #fff;
-        border: none;
-        filter: drop-shadow(0 0 4px $shadow-light);
-        &:hover {
-            background-color: darken(#fff, 3%);
-        }
+	.back_button {
+		background-image: url("../../../public/assets/arrows-left.svg");
+		background-position: pxToRem(34px) center;
+		background-repeat: no-repeat;
+		background-size: pxToRem(22px) pxToRem(22px);
+		margin-top: pxToRem(160px);
+		width: pxToRem(135px);
+		height: pxToRem(40px);
+		border-radius: pxToRem(5px);
+		border: none;
+		border: 1px solid grey;
+		color: $dark-text;
+		font-weight: 400;
+		font-size: pxToRem(16px);
+		cursor: pointer;
+		background-color: #fff;
+		border: none;
+		filter: drop-shadow(0 0 4px $shadow-light);
+		&:hover {
+			background-color: darken(#fff, 3%);
+		}
 
-        .button_text {
-            margin-left: pxToRem(25px);
-        }
+		.button_text {
+			margin-left: pxToRem(25px);
+		}
 
-        @include mobile {
-            height: pxToRem(32px);
-            width: pxToRem(105px);
-            margin-top: pxToRem(120px);
-            background-position: pxToRem(22px) center;
-            font-size: pxToRem(14px);
-        }
-    }
+		@include mobile {
+			height: pxToRem(32px);
+			width: pxToRem(105px);
+			margin-top: pxToRem(120px);
+			background-position: pxToRem(22px) center;
+			font-size: pxToRem(14px);
+		}
+	}
 
-    .country_details_container {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-gap: pxToRem(50px);
-        margin-top: pxToRem(70px);
-        align-items: center;
+	.country_details_container {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-gap: pxToRem(50px);
+		margin-top: pxToRem(70px);
+		align-items: center;
 
-        @include tablet {
-            grid-gap: pxToRem(50px);
-        }
+		@include tablet {
+			grid-gap: pxToRem(50px);
+		}
 
-        @include desktop {
-            grid-gap: pxToRem(120px);
-        }
-        .country_flag {
-            width: 100%;
-        }
+		@include desktop {
+			grid-gap: pxToRem(120px);
+		}
+		.country_flag {
+			width: 100%;
+		}
 
-        .info_list {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            grid-gap: pxToRem(20px);
+		.info_list {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			grid-gap: pxToRem(20px);
 
-            @include mobile {
-                grid-template-columns: 1fr;
-            }
-        }
+			@include mobile {
+				grid-template-columns: 1fr;
+			}
+		}
 
-        .border_countries {
-            display: flex;
-            gap: pxToRem(5px);
-            flex-wrap: wrap;
-            margin-top: pxToRem(50px);
-            margin-bottom: 0;
-            align-items: center;
+		.border_countries {
+			display: flex;
+			gap: pxToRem(5px);
+			flex-wrap: wrap;
+			margin-top: pxToRem(50px);
+			margin-bottom: 0;
+			align-items: center;
 
-            @include mobile {
-                margin-bottom: pxToRem(30px);
-            }
+			@include mobile {
+				margin-bottom: pxToRem(30px);
+			}
 
-            .border_countries_heading {
-                margin: 0;
-                margin-right: pxToRem(15px);
-                font-size: 1rem;
-            }
+			.border_countries_heading {
+				margin: 0;
+				margin-right: pxToRem(15px);
+				font-size: 1rem;
+			}
 
-            .border_country_name {
-                background-color: #fff;
-                padding: pxToRem(5px);
-                border: none;
-                border-radius: pxToRem(5px);
-                min-width: pxToRem(90px);
-                filter: drop-shadow(0 0 4px $shadow-light);
-                cursor: pointer;
-                height: pxToRem(32px);
-                font-size: pxToRem(14px);
+			.border_country_name {
+				background-color: #fff;
+				padding: pxToRem(5px);
+				border: none;
+				border-radius: pxToRem(5px);
+				min-width: pxToRem(90px);
+				filter: drop-shadow(0 0 4px $shadow-light);
+				cursor: pointer;
+				height: pxToRem(32px);
+				font-size: pxToRem(14px);
 
-                &:hover {
-                    background-color: darken(#fff, 3%);
-                }
+				&:hover {
+					background-color: darken(#fff, 3%);
+				}
 
-                @include mobile {
-                    font-size: pxToRem(12px);
-                    min-width: pxToRem(70px);
-                    height: pxToRem(28px);
-                }
-            }
-        }
+				@include mobile {
+					font-size: pxToRem(12px);
+					min-width: pxToRem(70px);
+					height: pxToRem(28px);
+				}
+			}
+		}
 
-        .country_name {
-            font-size: 2rem;
-            margin-top: 0;
-            @include mobile {
-                font-size: pxToRem(22px);
-            }
-        }
+		.country_name {
+			font-size: 2rem;
+			margin-top: 0;
+			@include mobile {
+				font-size: pxToRem(22px);
+			}
+		}
 
-        @include mobile {
-            grid-template-columns: 1fr;
-        }
-    }
+		@include mobile {
+			grid-template-columns: 1fr;
+		}
+	}
+}
+
+.dark-theme .country_name {
+	color: #fff;
 }
 
 .dark-theme .country_details {
-    color: #fff;
-    .country_details_container .border_country_name,
-    .back_button {
-        background-color: $dark-grey;
-        filter: drop-shadow(0 0 4px $shadow-dark);
-        &:hover {
-            background-color: lighten($dark-grey, 5%);
-        }
-    }
+	color: #fff;
+	.country_details_container .border_country_name,
+	.back_button {
+		background-color: $dark-grey;
+		filter: drop-shadow(0 0 4px $shadow-dark);
+		&:hover {
+			background-color: lighten($dark-grey, 5%);
+		}
+	}
 
-    .back_button {
-        color: #fff;
-        background-image: url("../../../public/assets/arrows-left-white.svg");
-    }
+	.back_button {
+		color: #fff;
+		background-image: url("../../../public/assets/arrows-left-white.svg");
+	}
 }
 
 .country_not_found {
-    font-size: pxToRem(30px);
-    height: 100vh;
+	font-size: pxToRem(30px);
+	height: 100vh;
 
-    @include mobile {
-        font-size: pxToRem(20px);
-    }
+	@include mobile {
+		font-size: pxToRem(20px);
+	}
 
-    p {
-        margin: 0 auto;
-        display: block;
-        width: fit-content;
-        top: 50%;
-        position: relative;
-        a {
-            text-decoration: underline;
-            color: #00f;
-        }
-    }
+	p {
+		margin: 0 auto;
+		display: block;
+		width: fit-content;
+		top: 50%;
+		position: relative;
+		a {
+			text-decoration: underline;
+			color: #00f;
+		}
+	}
 }
